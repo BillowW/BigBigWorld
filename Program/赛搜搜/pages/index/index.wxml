@@ -1,5 +1,17 @@
 <!--index.wxml-->
 <view class="container">
-  <text>首页</text>
-  <navigator url="/pages/index/index"></navigator>
+  <view>
+    <input value="search"></input>
+    <image src="/images/search.png" mode="aspectFit"></image>
+  </view>
+  <view>
+    <form>
+      <piceker>a</piceker>
+      <piceker>b</piceker>
+      <piceker>c</piceker>
+    </form>
+  </view>
+  <view>
+    <view>比赛列表</view>
+  </view>
 </view>

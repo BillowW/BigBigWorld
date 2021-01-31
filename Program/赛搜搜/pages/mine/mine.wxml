@@ -1,4 +1,7 @@
 <view class="container">
-  <text>mine</text>
-  <navigator url="/pages/mine/mine"></navigator>
+  <view>个人信息</view>
+  <view>获奖情况</view>
+  <view>已参赛</view>
+  <view>收藏</view>
+  <view>浏览记录</view>
 </view>
