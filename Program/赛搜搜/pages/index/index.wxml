@@ -10,9 +10,21 @@
   <!-- 筛选列表 -->
   <view>
     <form>
-      <piceker>a</piceker>
-      <piceker>b</piceker>
-      <piceker>c</piceker>
+      <picker bindchange="bindPickerChange" value="{{subjectIndex}}"  range="{{subjectArray}}">
+        <view>
+          科目: {{subjectArray[subjectIndex]}}
+        </view>
+      </picker>
+      <picker bindchange="bindPickerChange" value="{{positionIndex}}" range="{{positionArray}}">
+        <view>
+          地区：{{positionArray[positionIndex]}}
+        </view>
+      </picker>
+      <picker bindchange="bindPickerChange" value="{{dateIndex}}" range="{{dateArray}}">
+        <view>
+          日期：{{dateArray[dateIndex]}}
+        </view>
+      </picker>
     </form>
   </view>
 
