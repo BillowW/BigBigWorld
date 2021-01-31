@@ -1,9 +1,13 @@
 <!--index.wxml-->
 <view class="container">
+
+  <!-- 搜索框 -->
   <view>
     <input value="search"></input>
     <image src="/images/search.png" mode="aspectFit"></image>
   </view>
+
+  <!-- 筛选列表 -->
   <view>
     <form>
       <piceker>a</piceker>
@@ -11,6 +15,8 @@
       <piceker>c</piceker>
     </form>
   </view>
+
+  <!-- 比赛列表 -->
   <view>
     <view>比赛列表</view>
   </view>
