@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+  <text>首页</text>
+  <navigator url="/pages/index/index"></navigator>
+</view>

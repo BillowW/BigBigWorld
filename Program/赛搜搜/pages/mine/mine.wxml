@@ -1,0 +1,4 @@
+<view class="container">
+  <text>mine</text>
+  <navigator url="/pages/mine/mine"></navigator>
+</view>
