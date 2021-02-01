@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-
+<!-- 就解开了 -->
   <!-- 搜索框 -->
   <view>
     <input value="search"></input>
