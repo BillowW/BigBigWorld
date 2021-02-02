@@ -1,10 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-<!-- 就解开了 -->
   <!-- 搜索框 -->
-  <view>
-    <input value="search"></input>
-    <image src="/images/search.png" mode="aspectFit"></image>
+  <view id="search">
+    <input value="search" id="searchInput"></input>
+    <image src="/images/search.png" mode="aspectFit" id="searchImg"></image>
   </view>
 
   <!-- 筛选列表 -->

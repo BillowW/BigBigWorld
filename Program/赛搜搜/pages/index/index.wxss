@@ -1,1 +1,16 @@
 /**index.wxss**/
+
+#search {
+  display: flex;
+  width: 500rpx;
+  height: 125rpx;
+}
+
+#searchInput {
+  padding-top: 0.6em;
+}
+
+#searchImg {
+  width: 100rpx;
+  height: 100rpx;
+}
