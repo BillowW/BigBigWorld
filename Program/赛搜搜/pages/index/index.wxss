@@ -14,3 +14,17 @@
   width: 100rpx;
   height: 100rpx;
 }
+
+#pickView {
+
+  display: flex;
+}
+
+.pick {
+  padding: 0.3em;
+
+}
+
+#listView {
+  margin-top: 1em;
+}

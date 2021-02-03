@@ -1,0 +1,25 @@
+<!--pages/detail/detail.wxml-->
+
+<view class="container">
+  <view>功能信息栏
+    <navigator url="/pages/index/index">返回</navigator>
+  </view>
+  <view>
+    图片
+  </view>
+
+  <view>
+    详情栏
+    <swiper indicator-dots="true">
+      <swiper-item>
+        <view>简介</view>
+      </swiper-item>
+      <swiper-item>
+        <view>含金量</view>
+      </swiper-item>
+      <swiper-item>
+        <view>获奖情况</view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

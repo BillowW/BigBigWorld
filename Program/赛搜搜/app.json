@@ -1,7 +1,9 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/detail/detail"
+
   ],
   "tabBar": {
     "color": "#a9b7b7",
@@ -22,11 +24,11 @@
       }
     ]
   },
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "赛搜搜",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

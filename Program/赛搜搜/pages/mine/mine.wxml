@@ -1,7 +1,14 @@
 <view class="container">
-  <view>个人信息</view>
-  <view>获奖情况</view>
-  <view>已参赛</view>
-  <view>收藏</view>
-  <view>浏览记录</view>
+  <view bindchange="" id="user" class="list">
+    <image src="/images/user.png" mode="aspectFit" id="userImg"></image>
+    <view id="userName">Username</view>
+  </view>
+
+  <view bindchange="" class="list">获奖情况</view>
+
+  <view bindchange="" class="list">已参赛</view>
+
+  <view bindchange="" class="list">收藏</view>
+
+  <view bindchange="" class="list">浏览记录</view>
 </view>

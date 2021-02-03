@@ -7,28 +7,28 @@
   </view>
 
   <!-- 筛选列表 -->
-  <view>
-    <form>
-      <picker bindchange="bindPickerChange" value="{{subjectIndex}}"  range="{{subjectArray}}">
-        <view>
-          科目: {{subjectArray[subjectIndex]}}
-        </view>
-      </picker>
-      <picker bindchange="bindPickerChange" value="{{positionIndex}}" range="{{positionArray}}">
-        <view>
-          地区：{{positionArray[positionIndex]}}
-        </view>
-      </picker>
-      <picker bindchange="bindPickerChange" value="{{dateIndex}}" range="{{dateArray}}">
-        <view>
-          日期：{{dateArray[dateIndex]}}
-        </view>
-      </picker>
-    </form>
+  <view id="pickView">
+    <picker bindchange="bindPickerChange" value="{{subjectIndex}}"  range="{{subjectArray}}" class="pick">
+      <view>
+        科目: {{subjectArray[subjectIndex]}}
+      </view>
+    </picker>
+    <picker bindchange="bindPickerChange" value="{{positionIndex}}" range="{{positionArray}}" class="pick">
+      <view>
+        地区：{{positionArray[positionIndex]}}
+      </view>
+    </picker>
+    <picker bindchange="bindPickerChange" value="{{dateIndex}}" range="{{dateArray}}" class="pick">
+      <view>
+        日期：{{dateArray[dateIndex]}}
+      </view>
+    </picker>
   </view>
 
   <!-- 比赛列表 -->
-  <view>
-    <view>比赛列表</view>
+  <view id="listView">
+    <view>比赛列表
+      <navigator url="/pages/detail/detail">比赛A</navigator>
+    </view>
   </view>
 </view>

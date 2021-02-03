@@ -1,0 +1,25 @@
+.container {
+  padding: 0em;
+  margin: 0em;
+  display: flex;
+}
+
+.list {
+  margin: 1em;
+  border-bottom: 0.1em dashed black;
+}
+
+#user {
+  display: flex;
+}
+
+#userImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+#userName {
+  padding-left: 1em;
+  padding-top: 0.6em;
+}
+
