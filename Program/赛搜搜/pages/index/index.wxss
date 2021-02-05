@@ -1,18 +1,35 @@
 /**index.wxss**/
 
+.container {
+  margin: 0em;
+  padding: 0em;
+}
+
 #search {
   display: flex;
-  width: 500rpx;
+  width: 550rpx;
   height: 125rpx;
+  margin-top: 40rpx;
 }
 
 #searchInput {
-  padding-top: 0.6em;
+  border: 3rpx solid black;
+  border-radius: 12px;
+  background-color: rgba(228, 221, 211, 0.308);
+}
+
+#searchButton {
+  height: 70rpx;
+  width: 70rpx;
+  padding: 0;
+  margin: 0;
+  border: none;
+  margin-left: 30rpx;
 }
 
 #searchImg {
-  width: 100rpx;
-  height: 100rpx;
+  width: 70rpx;
+  height: 70rpx;
 }
 
 #pickView {
@@ -26,5 +43,17 @@
 }
 
 #listView {
-  margin-top: 1em;
+  height: fit-content;
+  width: 600rpx;
+  margin-top: 30rpx;
+}
+
+.list {
+  display: flex;
+  border-bottom: 3rpx solid black;
+}
+
+.listImg {
+  width: 100rpx;
+  height: 100rpx;
 }

@@ -1,1 +1,20 @@
 /* pages/detail/detail.wxss */
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+#mesList {
+  display: flex;
+}
+
+#imgView {
+  margin-top: 50rpx;
+  width: 600rpx;
+}
+
+#detail {
+  margin-top: 50rpx;
+  width: 650rpx;
+}

@@ -1,15 +1,27 @@
 <!--pages/detail/detail.wxml-->
 
 <view class="container">
-  <view>功能信息栏
-    <navigator url="/pages/index/index">返回</navigator>
-  </view>
-  <view>
-    图片
+  <view id="mesList">
+    <view>学科</view>
+    <view>地区</view>
+    <view>月份</view>
   </view>
 
-  <view>
-    详情栏
+  <view id="img" id="imgView">
+    <swiper indicator-dots="true">
+      <swiper-item>
+        <image src="/images/bg.jpg" class="img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/bg.jpg" class="img"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/bg.jpg" class="img"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view id="detail">
     <swiper indicator-dots="true">
       <swiper-item>
         <view>简介</view>
@@ -22,4 +34,5 @@
       </swiper-item>
     </swiper>
   </view>
+
 </view>
