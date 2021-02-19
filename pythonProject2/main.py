@@ -7,14 +7,8 @@ import string
 
 def main():
     baseurl = "http://www.52jingsai.com/bisai/index.php?page="
-    print(baseurl)
     datalist = getData(baseurl)# 1.爬取网页 2.解析数据
-    print((datalist))
-    datalist1 = str(datalist)
     # 3.保存数据
-    f = open('test.txt','w',encoding='utf-8')
-    f.writelines(datalist1)
-    f.close()
 findTitless = re.compile(r'<a class="xi2" href="(.*)">(.*)</a> </dt>',re.S)
 findContencess = re.compile(r'<dd class="xs2 cl">(.*)<div class="list_info">',re.S)
 findSortss = re.compile(r'<label><a class="xi2" href="(.*)">(.*)</a></label>',re.S)
@@ -24,15 +18,15 @@ findSortss = re.compile(r'<label><a class="xi2" href="(.*)">(.*)</a></label>',re
 # 爬取网页
 def getData(baseurl):
     datalist =[]
-    for i in range(0, 100):
-        url = baseurl +"pn"+str(i)
+    f = open('test.txt','a',encoding='utf-8')
+    for i in range(0, 10):
+        url = baseurl + str(i)
         html = askURL(url)  # 保存获取到的网页源码
         # 2.逐一解析数据
         soup = BeautifulSoup(html,"html.parser")
         for item in soup.find_all('dl',class_="bbda list_bbda cl"):
             data =[]
             item = str(item)
-            print(item)
             titless = re.findall(findTitless,item)[0]#解析名字
             titless = str(titless)
             titless = re.sub('/'," ",titless)
@@ -48,7 +42,10 @@ def getData(baseurl):
             sortss = re.sub('/'," ",contencess)
             sortss = re.sub('<br(\s+)?/>(\s+)'," ",sortss)
             data.append(str(sortss))
+            f.write(str(data))
+            f.write("\n")
             datalist.append(data)
+    f.close()
     return datalist
 
 
