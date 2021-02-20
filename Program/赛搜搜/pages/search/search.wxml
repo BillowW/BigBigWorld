@@ -1,0 +1,20 @@
+<!-- 引入wxs -->
+<wxs src="../../utils/indexof.wxs" module="tools"></wxs>
+
+<!--pages/search/search.wxml-->
+<view class="container">
+  <!-- 搜索框 -->
+  <view class="searchInput">
+    <input type="text" value="" placeholder="搜索" bindinput="search"/>
+  </view>
+
+  <!-- 搜索结果列表 -->
+  <view>
+    <view wx:for="{{subArray}}">
+      <view wx:if="{{tools.indexOf(item.name, searchValue)}}">
+        <image src="/images/game.png" class="listImg"></image>
+        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
+      </view>
+    </view>
+  </view>
+</view>

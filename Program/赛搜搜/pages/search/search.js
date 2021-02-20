@@ -1,15 +1,15 @@
+// pages/search/search.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    // 筛选列表的数据
-    subjectArray: ['a', 'b', 'c'],
-    subjectIndex: 0,
-
-    dateArray: ['1', '2', '3'],
-    dateIndex: 0,
-
+    searchValue: "",
+    isTrue: false,
     subArray: [
       {
-        name: 'Aa1',
+        name: 'Aa',
         sub: 'a',
         date: '1',
         mes: 'aa'
@@ -47,22 +47,9 @@ Page({
     ]
   },
 
-  // 筛选列表的更改函数
-  bindPickerChangeSub: function (e) {
-    console.log('启动成功')
-    
-    //修改选择的数据 
+  search: function(e){
     this.setData({
-      subjectIndex: e.detail.value
-    })
-  },
-
-  bindPickerChangeDate: function (e) {
-    console.log('启动成功')
-    
-    //修改选择的数据 
-    this.setData({
-      dateIndex: e.detail.value
+      searchValue: e.detail.value
     })
   }
 })

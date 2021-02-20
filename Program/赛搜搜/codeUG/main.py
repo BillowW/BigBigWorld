@@ -24,7 +24,7 @@ def main():
 def getdata(baseurl, findtitless, findcontencess, findsortss):
     datalist = []
     for i in range(0, 100):
-        url = baseurl + "pn" +str(i)
+        url = baseurl + "pn" + str(i)
         html = askurl(url)  # 保存获取到的网页源码
 
         # 2.逐一解析数据

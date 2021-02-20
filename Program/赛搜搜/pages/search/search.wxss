@@ -1,0 +1,10 @@
+/* pages/search/search.wxss */
+
+.container{
+  padding: 0%;
+  margin: 0%;
+}
+
+.searchInput{
+  border: 5rpx black solid;
+}

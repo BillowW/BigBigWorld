@@ -1,16 +1,17 @@
 <!--pages/detail/detail.wxml-->
 
 <view class="container">
+  <view>{{subArray[index].name}}</view>
   <view id="mesList">
-    <view>学科</view>
-    <view>地区</view>
-    <view>月份</view>
+    <view>{{subArray[index].sub}}</view>
+    <view>{{subArray[index].date}}</view>
   </view>
+  <view>{{subArray[index].host}}</view>
 
   <view id="img" id="imgView">
     <swiper indicator-dots="true">
       <swiper-item>
-        <image src="/images/bg.jpg" class="img"></image>
+        <image src="{{subArray[index].img[1]}}" class="img"></image>
       </swiper-item>
       <swiper-item>
         <image src="/images/bg.jpg" class="img"></image>
@@ -25,6 +26,8 @@
     <swiper indicator-dots="true">
       <swiper-item>
         <view>简介</view>
+        <view>{{subArray[index].mes}}</view>
+        <view>主办单位: {{subArray[index].host}}</view>
       </swiper-item>
       <swiper-item>
         <view>含金量</view>
