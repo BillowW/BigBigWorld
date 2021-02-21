@@ -1,5 +1,7 @@
-<!--pages/detail/detail.wxml-->
+<!-- 引入wxs -->
+<wxs src="../../utils/src.wxs" module="tools"></wxs>
 
+<!--pages/detail/detail.wxml-->
 <view class="container">
   <view>{{subArray[index].name}}</view>
   <view id="mesList">
@@ -7,17 +9,16 @@
     <view>{{subArray[index].date}}</view>
   </view>
   <view>{{subArray[index].host}}</view>
-
   <view id="img" id="imgView">
     <swiper indicator-dots="true">
       <swiper-item>
-        <image src="{{subArray[index].img[1]}}" class="img"></image>
+        <image src="{{tools.imgSrc('cloud://main-7g0fysmpc4bc5d12.6d61-main-7g0fysmpc4bc5d12-1305028474/subImg/sub', index, '_1.jpg')}}" class="img"></image>
       </swiper-item>
       <swiper-item>
-        <image src="/images/bg.jpg" class="img"></image>
+        <image src="{{tools.imgSrc('cloud://main-7g0fysmpc4bc5d12.6d61-main-7g0fysmpc4bc5d12-1305028474/subImg/sub', index, '_2.jpg')}}" class="img"></image>
       </swiper-item>
       <swiper-item>
-        <image src="/images/bg.jpg" class="img"></image>
+        <image src="{{tools.imgSrc('cloud://main-7g0fysmpc4bc5d12.6d61-main-7g0fysmpc4bc5d12-1305028474/subImg/sub', index, '_3.jpg')}}" class="img"></image>
       </swiper-item>
     </swiper>
   </view>
