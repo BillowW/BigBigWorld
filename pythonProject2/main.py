@@ -19,7 +19,7 @@ findSortss = re.compile(r'<label><a class="xi2" href="(.*)">(.*)</a></label>',re
 def getData(baseurl):
     datalist =[]
     f = open('test.txt','a',encoding='utf-8')
-    for i in range(0, 10):
+    for i in range(0, 200):
         url = baseurl + str(i)
         html = askURL(url)  # 保存获取到的网页源码
         # 2.逐一解析数据
