@@ -1,10 +1,12 @@
 {
+  "useExtendedLib": {
+    "weui": true
+  },
   "pages": [
-
     "pages/index/index",
     "pages/mine/mine",
-    "pages/detail/detail"
-
+    "pages/detail/detail",
+    "pages/search/search"
 
   ],
   "tabBar": {

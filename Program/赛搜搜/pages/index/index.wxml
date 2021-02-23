@@ -1,24 +1,18 @@
 <!--index.wxml-->
 <view class="container">
   <!-- 搜索框 -->
-  <view id="search">
-    <input value="search" id="searchInput"></input>
-    <button id="searchButton" plain="true"><image src="/images/search.png" mode="aspectFit" id="searchImg"></image></button>
+  <view>
+    <navigator url="/pages/search/search">搜索</navigator>
   </view>
 
   <!-- 筛选列表 -->
   <view id="pickView">
-    <picker bindchange="bindPickerChange" value="{{subjectIndex}}"  range="{{subjectArray}}" class="pick">
+    <picker bindchange="bindPickerChangeSub" value="{{subjectIndex}}"  range="{{subjectArray}}" class="pick">
       <view>
         科目: {{subjectArray[subjectIndex]}}
       </view>
     </picker>
-    <picker bindchange="bindPickerChange" value="{{positionIndex}}" range="{{positionArray}}" class="pick">
-      <view>
-        地区：{{positionArray[positionIndex]}}
-      </view>
-    </picker>
-    <picker bindchange="bindPickerChange" value="{{dateIndex}}" range="{{dateArray}}" class="pick">
+    <picker bindchange="bindPickerChangeDate" value="{{dateIndex}}" range="{{dateArray}}" class="pick">
       <view>
         日期：{{dateArray[dateIndex]}}
       </view>
@@ -27,37 +21,12 @@
 
   <!-- 比赛列表 -->
   <view id="listView">
-    <view class="list">
-      <image src="/images/窗花.png" class="listImg"></image>
-      <navigator url="/pages/detail/detail">比赛A</navigator>
+    <view wx:for="{{subArray}}">
+      <view wx:if="{{item.sub==subjectArray[subjectIndex] && item.date==dateArray[dateIndex]}}" class="list">
+        <image src="/images/game.png" class="listImg"></image>
+        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
+      </view>
     </view>
-    <view class="list">
-      <image src="/images/窗花.png" class="listImg"></image>
-      <navigator url="/pages/detail/detail">比赛B</navigator>
-    </view>
-    <view class="list">
-      <image src="/images/窗花.png" class="listImg"></image>
-      <navigator url="/pages/detail/detail">比赛C</navigator>
-    </view>
-    <view class="list">
-      <image src="/images/窗花.png" class="listImg"></image>
-      <navigator url="/pages/detail/detail">比赛D</navigator>
-    </view>
-    <view class="list">
-      <image src="/images/窗花.png" class="listImg"></image>
-      <navigator url="/pages/detail/detail">比赛E</navigator>
-    </view>
-    <view class="list">
-      <image src="/images/窗花.png" class="listImg"></image>
-      <navigator url="/pages/detail/detail">比赛F</navigator>
-    </view>
-    <view class="list">
-      <image src="/images/窗花.png" class="listImg"></image>
-      <navigator url="/pages/detail/detail">比赛G</navigator>
-    </view>
-    <view class="list">
-      <image src="/images/窗花.png" class="listImg"></image>
-      <navigator url="/pages/detail/detail">比赛H</navigator>
-    </view>
+
   </view>
 </view>

@@ -1,0 +1,6 @@
+function imgSrc(name, number, num) {
+  a = Number(number);
+  a += 1;
+  return name+a+num;
+}
+module.exports.imgSrc = imgSrc;
