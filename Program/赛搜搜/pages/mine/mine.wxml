@@ -4,11 +4,13 @@
     <view id="userName">Username</view>
   </view>
 
-  <view bindchange="" class="list">获奖情况</view>
-
-  <view bindchange="" class="list">已参赛</view>
-
-  <view bindchange="" class="list">收藏</view>
-
-  <view bindchange="" class="list">浏览记录</view>
+<!-- 浏览记录 -->
+  <view bindchange="" class="list">
+    <view wx:for="{{subArray}}">
+      <view wx:if="{{item.viewed == 'true'}}">
+        <image src="/images/game.png" class="listImg"></image>
+        <navigator url="/pages/detail/detail?index={{index}}">{{item.name}}</navigator>
+      </view>
+    </view>
+  </view>
 </view>
