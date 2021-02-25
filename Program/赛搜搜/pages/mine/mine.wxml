@@ -1,14 +1,16 @@
 <view class="container">
-  <view bindchange="" id="user" class="list">
+  <view bindchange="" id="user">
     <image src="/images/user.png" mode="aspectFit" id="userImg"></image>
-    <view id="userName">Username</view>
+    <input type="text" value="username" placeholder="请输入用户名" id="username"></input>
   </view>
 
 <!-- 浏览记录 -->
-  <view bindchange="" class="list">
+
+  <view>
+    <view id="text">浏览记录</view>
     <view wx:for="{{subArray}}">
-      <view wx:if="{{item.viewed == 'true'}}">
-        <image src="/images/game.png" class="listImg"></image>
+      <view wx:if="{{item.viewed == 'true'}}" class="list">
+        <image src="/images/game.png" class="listImg" class="listImg"></image>
         <navigator url="/pages/detail/detail?index={{index}}">{{item.name}}</navigator>
       </view>
     </view>

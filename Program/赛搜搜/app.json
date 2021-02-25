@@ -3,6 +3,7 @@
     "weui": true
   },
   "pages": [
+    
     "pages/index/index",
     "pages/mine/mine",
     "pages/detail/detail",

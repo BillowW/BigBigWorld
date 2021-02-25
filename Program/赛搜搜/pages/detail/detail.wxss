@@ -5,8 +5,17 @@
   padding: 0;
 }
 
-#mesList {
+.text{
+  text-align: center;
+}
+
+.mesList{
+  padding: 10rpx;
+}
+
+#mes {
   display: flex;
+  margin: 15rpx;
 }
 
 #imgView {

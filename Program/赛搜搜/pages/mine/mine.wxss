@@ -4,13 +4,17 @@
   display: flex;
 }
 
-.list {
-  margin: 1em;
-  border-bottom: 0.1em dashed black;
+.view {
 }
 
 #user {
   display: flex;
+  margin-left: 200rpx;
+}
+
+#username{
+  padding-top: 17rpx;
+  padding-left: 30rpx;
 }
 
 #userImg {
@@ -23,3 +27,18 @@
   padding-top: 0.6em;
 }
 
+#text{
+  text-align: center;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.list {
+  display: flex;
+  border-bottom: 3rpx solid black;
+}
+
+.listImg {
+  width: 100rpx;
+  height: 100rpx;
+}

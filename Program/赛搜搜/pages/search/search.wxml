@@ -11,7 +11,7 @@
   <!-- 搜索结果列表 -->
   <view>
     <view wx:for="{{subArray}}">
-      <view wx:if="{{tools.indexOf(item.name, searchValue)}}">
+      <view wx:if="{{tools.indexOf(item.name, searchValue)}}" class="list">
         <image src="/images/game.png" class="listImg"></image>
         <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
       </view>

@@ -8,3 +8,13 @@
 .searchInput{
   border: 5rpx black solid;
 }
+
+.list {
+  display: flex;
+  border-bottom: 3rpx solid black;
+}
+
+.listImg {
+  width: 100rpx;
+  height: 100rpx;
+}
