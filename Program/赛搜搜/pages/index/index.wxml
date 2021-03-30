@@ -1,44 +1,40 @@
-<!--index.wxml-->
-<view class="container">
-  <!-- 搜索框 -->
+<!--pages/recommend/recommend.wxml-->
+<view>
+  <text>推荐</text>
+
+  <!-- 热门栏 -->
   <view>
-    <navigator url="/pages/search/search">搜索</navigator>
+    <text>热门</text>
+    <swiper indicator-dots="true">
+      <swiper-item>
+        <image src="/images/bg.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/bg.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/bg.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/bg.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+        <image src="/images/bg.jpg"></image>
+      </swiper-item>
+    </swiper>
+    
   </view>
 
-  <!-- 筛选列表 -->
-  <view id="pickView">
-    <picker bindchange="bindPickerChangeSub" value="{{subjectIndex}}"  range="{{subjectArray}}" class="pick">
-      <view>
-        科目: {{subjectArray[subjectIndex]}}
-      </view>
-    </picker>
-    <picker bindchange="bindPickerChangeDate" value="{{dateIndex}}" range="{{dateArray}}" class="pick">
-      <view>
-        日期：{{dateArray[dateIndex]}}
-      </view>
-    </picker>
+  <!-- 推荐栏 -->
+  <view>
+    <text>推荐</text>
+    <scroll-view scroll-x="true" class="image-group">
+      <image src="/images/bg.jpg"></image>
+      <image src="/images/bg.jpg"></image>
+      <image src="/images/bg.jpg"></image>
+      <image src="/images/bg.jpg"></image>
+      <image src="/images/bg.jpg"></image>
+    </scroll-view>
   </view>
-
-  <!-- 比赛列表 -->
-  <view id="listView">
-    <view wx:for="{{subArray}}">
-      <view wx:if="{{subjectIndex==0 && dateIndex==0}}" class="list">
-        <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
-      </view>
-      <view wx:elif="{{subjectIndex==0 && item.date==dateArray[dateIndex]}}" class="list">
-        <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
-      </view>
-      <view wx:elif="{{item.sub==subjectArray[subjectIndex] && dateIndex==0}}" class="list">
-        <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
-      </view>
-      <view wx:elif="{{item.sub==subjectArray[subjectIndex] && item.date==dateArray[dateIndex]}}" class="list">
-        <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
-      </view>
-    </view>
-
-  </view>
+  
 </view>

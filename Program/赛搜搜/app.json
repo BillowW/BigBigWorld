@@ -3,12 +3,11 @@
     "weui": true
   },
   "pages": [
-    
     "pages/index/index",
     "pages/mine/mine",
     "pages/detail/detail",
-    "pages/search/search"
-
+    "pages/search/search",
+    "pages/inSearch/inSearch"
   ],
   "tabBar": {
     "color": "#a9b7b7",
@@ -17,9 +16,15 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "home",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-ed.png"
+        "text": "recommend",
+        "iconPath": "images/recommend.png",
+        "selectedIconPath": "images/recommend-ed.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "search",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search-ed.png"
       },
       {
         "pagePath": "pages/mine/mine",

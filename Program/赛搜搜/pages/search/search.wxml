@@ -1,20 +1,44 @@
-<!-- 引入wxs -->
-<wxs src="../../utils/indexof.wxs" module="tools"></wxs>
-
-<!--pages/search/search.wxml-->
+<!--index.wxml-->
 <view class="container">
   <!-- 搜索框 -->
-  <view class="searchInput">
-    <input type="text" value="" placeholder="搜索" bindinput="search"/>
+  <view>
+    <navigator url="/pages/inSearch/inSearch">搜索</navigator>
   </view>
 
-  <!-- 搜索结果列表 -->
-  <view>
+  <!-- 筛选列表 -->
+  <view id="pickView">
+    <picker bindchange="bindPickerChangeSub" value="{{subjectIndex}}"  range="{{subjectArray}}" class="pick">
+      <view>
+        科目: {{subjectArray[subjectIndex]}}
+      </view>
+    </picker>
+    <picker bindchange="bindPickerChangeDate" value="{{dateIndex}}" range="{{dateArray}}" class="pick">
+      <view>
+        日期：{{dateArray[dateIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <!-- 比赛列表 -->
+  <view id="listView">
     <view wx:for="{{subArray}}">
-      <view wx:if="{{tools.indexOf(item.name, searchValue)}}" class="list">
+      <view wx:if="{{subjectIndex==0 && dateIndex==0}}" class="list">
+        <image src="/images/game.png" class="listImg"></image>
+        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
+      </view>
+      <view wx:elif="{{subjectIndex==0 && item.date==dateArray[dateIndex]}}" class="list">
+        <image src="/images/game.png" class="listImg"></image>
+        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
+      </view>
+      <view wx:elif="{{item.sub==subjectArray[subjectIndex] && dateIndex==0}}" class="list">
+        <image src="/images/game.png" class="listImg"></image>
+        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
+      </view>
+      <view wx:elif="{{item.sub==subjectArray[subjectIndex] && item.date==dateArray[dateIndex]}}" class="list">
         <image src="/images/game.png" class="listImg"></image>
         <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
       </view>
     </view>
+
   </view>
 </view>

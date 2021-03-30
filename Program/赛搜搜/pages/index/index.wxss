@@ -1,59 +1,11 @@
-/**index.wxss**/
+/* pages/recommend/recommend.wxss */
 
-.container {
-  margin: 0em;
-  padding: 0em;
-}
-
-#search {
+.image-group {
   display: flex;
-  width: 550rpx;
-  height: 125rpx;
-  margin-top: 40rpx;
-}
-
-#searchInput {
-  border: 3rpx solid black;
-  border-radius: 12px;
-  background-color: rgba(228, 221, 211, 0.308);
-}
-
-#searchButton {
-  height: 70rpx;
-  width: 70rpx;
-  padding: 0;
-  margin: 0;
-  border: none;
-  margin-left: 30rpx;
-}
-
-#searchImg {
-  width: 70rpx;
-  height: 70rpx;
-}
-
-#pickView {
-
-  display: flex;
-}
-
-.pick {
-  padding: 0.3em;
-
-}
-
-#listView {
-  height: fit-content;
-  width: 600rpx;
+  white-space: nowrap;
   margin-top: 30rpx;
 }
-
-.list {
-  display: flex;
-  border-bottom: 3rpx solid black;
-}
-
-.listImg {
-  width: 100rpx;
-  height: 100rpx;
+.image-group image {
+  display: inline-block;
+  margin-right: 20rpx;
 }

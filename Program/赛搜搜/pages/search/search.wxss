@@ -1,12 +1,51 @@
-/* pages/search/search.wxss */
+/**index.wxss**/
 
-.container{
-  padding: 0%;
-  margin: 0%;
+.container {
+  margin: 0em;
+  padding: 0em;
 }
 
-.searchInput{
-  border: 5rpx black solid;
+#search {
+  display: flex;
+  width: 550rpx;
+  height: 125rpx;
+  margin-top: 40rpx;
+}
+
+#searchInput {
+  border: 3rpx solid black;
+  border-radius: 12px;
+  background-color: rgba(228, 221, 211, 0.308);
+}
+
+#searchButton {
+  height: 70rpx;
+  width: 70rpx;
+  padding: 0;
+  margin: 0;
+  border: none;
+  margin-left: 30rpx;
+}
+
+#searchImg {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+#pickView {
+
+  display: flex;
+}
+
+.pick {
+  padding: 0.3em;
+
+}
+
+#listView {
+  height: fit-content;
+  width: 600rpx;
+  margin-top: 30rpx;
 }
 
 .list {

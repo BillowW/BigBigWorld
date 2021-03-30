@@ -1,34 +1,66 @@
-
-var app = getApp();
-
+// pages/recommend/recommend.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    // 筛选列表的数据
-    subjectArray: ['全部', '文学', '化学', '数学', '物理', '医学', '语言', '摄影', '文化教育', '艺术设计', '创新设计', '金融经济', '软件技术' ],
-    subjectIndex: 0,
 
-    dateArray: ['全部', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-    dateIndex: 0,
-
-    subArray: app.globalData.subArray
   },
 
-  // 筛选列表的更改函数
-  bindPickerChangeSub: function (e) {
-    console.log('启动成功')
-    
-    //修改选择的数据 
-    this.setData({
-      subjectIndex: e.detail.value
-    })
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
   },
 
-  bindPickerChangeDate: function (e) {
-    console.log('启动成功')
-    
-    //修改选择的数据 
-    this.setData({
-      dateIndex: e.detail.value
-    })
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })
