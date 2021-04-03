@@ -3,11 +3,15 @@
     "weui": true
   },
   "pages": [
+    "pages/search/search",
     "pages/index/index",
     "pages/mine/mine",
     "pages/detail/detail",
-    "pages/search/search",
-    "pages/inSearch/inSearch"
+    
+    "pages/inSearch/inSearch",
+    "pages/browRec/browRec",
+    "pages/collRec/collRec",
+    "pages/about/about"
   ],
   "tabBar": {
     "color": "#a9b7b7",

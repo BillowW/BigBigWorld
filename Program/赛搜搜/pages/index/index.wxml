@@ -5,21 +5,33 @@
   <!-- 热门栏 -->
   <view>
     <text>热门</text>
-    <swiper indicator-dots="true">
-      <swiper-item>
-        <image src="/images/bg.jpg"></image>
+    <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}"
+      indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"
+        indicator-color="#8799a3" indicator-active-color="#0081ff">
+      <swiper-item class="{{cardCur==index?'cur':''}}">
+        <image src="/images/bg.jpg"  mode="aspectFill" ></image>
+        <video src="/images/bg.jpg" autoplay loop muted show-play-btn="{{false}}"
+          controls="{{false}}" objectFit="cover"></video>
       </swiper-item>
-      <swiper-item>
-        <image src="/images/bg.jpg"></image>
+      <swiper-item class="{{cardCur==index?'cur':''}}">
+        <image src="/images/bg.jpg"  mode="aspectFill" ></image>
+        <video src="/images/bg.jpg" autoplay loop muted show-play-btn="{{false}}"
+          controls="{{false}}" objectFit="cover"></video>
       </swiper-item>
-      <swiper-item>
-        <image src="/images/bg.jpg"></image>
+      <swiper-item class="{{cardCur==index?'cur':''}}">
+        <image src="/images/bg.jpg"  mode="aspectFill" ></image>
+        <video src="/images/bg.jpg" autoplay loop muted show-play-btn="{{false}}"
+          controls="{{false}}" objectFit="cover"></video>
       </swiper-item>
-      <swiper-item>
-        <image src="/images/bg.jpg"></image>
+      <swiper-item class="{{cardCur==index?'cur':''}}">
+        <image src="/images/bg.jpg"  mode="aspectFill" ></image>
+        <video src="/images/bg.jpg" autoplay loop muted show-play-btn="{{false}}"
+          controls="{{false}}" objectFit="cover"></video>
       </swiper-item>
-      <swiper-item>
-        <image src="/images/bg.jpg"></image>
+      <swiper-item class="{{cardCur==index?'cur':''}}">
+        <image src="/images/bg.jpg"  mode="aspectFill" ></image>
+        <video src="/images/bg.jpg" autoplay loop muted show-play-btn="{{false}}"
+          controls="{{false}}" objectFit="cover"></video>
       </swiper-item>
     </swiper>
     

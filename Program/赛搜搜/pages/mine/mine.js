@@ -1,9 +1,5 @@
-
-var app = getApp();
-
 Page({
     data: {
-        subArray: app.globalData.subArray
     },
 
     onLoad: function() {
@@ -11,8 +7,5 @@ Page({
     },
 
     onShow: function() {
-        this.setData({
-            subArray: app.globalData.subArray
-        })
     }
 })

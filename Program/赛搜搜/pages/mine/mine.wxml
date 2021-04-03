@@ -1,18 +1,49 @@
-<view class="container">
-  <view bindchange="" id="user">
-    <image src="/images/user.png" mode="aspectFit" id="userImg"></image>
-    <input type="text" value="username" placeholder="请输入用户名" id="username"></input>
-  </view>
+<scroll-view scroll-y class="scrollPage">
 
-<!-- 浏览记录 -->
-
+  <!-- 信息 -->
   <view>
-    <view id="text">浏览记录</view>
-    <view wx:for="{{subArray}}">
-      <view wx:if="{{item.viewed == 'true'}}" class="list">
-        <image src="/images/game.png" class="listImg" class="listImg"></image>
-        <navigator url="/pages/detail/detail?index={{index}}">{{item.name}}</navigator>
-      </view>
+    <image class="cu-avatar xl round margin-left" src="/images/user.png"></image>
+    <view class="solid-bottom text-lg padding">
+        <text class="text-black">UserName</text>
     </view>
   </view>
-</view>
+
+    <!-- 浏览量 -->
+  <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-orange">123</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-attentionfill"></text> View
+      </view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-blue">456</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-favorfill"></text> Star</view>
+    </view>
+  </view>
+
+  <!-- 浏览记录及收藏 -->
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/browRec/browRec" hover-class="none">
+        <text class="cuIcon-attentionfill"></text>
+        <text class="text-grey">View</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/collRec/collRec" hover-class="none">
+        <text class="cuIcon-favorfill"></text>
+        <text class="text-grey">Stars</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/about" hover-class="none">
+        <image src="/images/logo.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">关于赛搜搜</text>
+      </navigator>
+    </view>
+  </view>
+
+</scroll-view>

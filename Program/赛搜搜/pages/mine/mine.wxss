@@ -4,41 +4,21 @@
   display: flex;
 }
 
-.view {
-}
-
-#user {
+#record{
   display: flex;
-  margin-left: 200rpx;
 }
 
-#username{
-  padding-top: 17rpx;
-  padding-left: 30rpx;
+.num {
+  /* 数字居中 */
+  margin-left: 50rpx;
 }
 
-#userImg {
-  width: 100rpx;
-  height: 100rpx;
-}
-
-#userName {
-  padding-left: 1em;
-  padding-top: 0.6em;
-}
-
-#text{
-  text-align: center;
-  margin-top: 30rpx;
-  margin-bottom: 30rpx;
-}
-
-.list {
+.text {
   display: flex;
-  border-bottom: 3rpx solid black;
 }
 
-.listImg {
-  width: 100rpx;
-  height: 100rpx;
+.rightIcon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 25rpx;
 }

@@ -1,0 +1,8 @@
+<!--pages/browRec/browRec.wxml-->
+<text>pages/browRec/browRec.wxml</text>
+<view wx:for="{{subArray}}">
+  <view wx:if="{{item.viewed == 'true'}}" class="list">
+    <image src="/images/game.png" class="listImg" class="listImg"></image>
+    <navigator url="/pages/detail/detail?index={{index}}">{{item.name}}</navigator>
+  </view>
+</view>

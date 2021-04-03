@@ -1,9 +1,18 @@
 <!--index.wxml-->
+<view class="box">
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索竞赛" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green shadow-blur round">搜索</button>
+    </view>
+  </view>
+</view>
 <view class="container">
   <!-- 搜索框 -->
-  <view>
-    <navigator url="/pages/inSearch/inSearch">搜索</navigator>
-  </view>
+
 
   <!-- 筛选列表 -->
   <view id="pickView">
