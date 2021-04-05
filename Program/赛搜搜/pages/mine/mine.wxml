@@ -40,7 +40,7 @@
     </view>
     <view class="cu-item arrow">
       <navigator class="content" url="/pages/about/about" hover-class="none">
-        <image src="/images/logo.png" class="png" mode="aspectFit"></image>
+        <text class="cuIcon-formfill text-green"></text>
         <text class="text-grey">关于赛搜搜</text>
       </navigator>
     </view>

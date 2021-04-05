@@ -5,47 +5,23 @@
   padding: 0em;
 }
 
-#search {
-  display: flex;
-  width: 550rpx;
-  height: 125rpx;
-  margin-top: 40rpx;
-}
-
-#searchInput {
-  border: 3rpx solid black;
-  border-radius: 12px;
-  background-color: rgba(228, 221, 211, 0.308);
-}
-
-#searchButton {
-  height: 70rpx;
-  width: 70rpx;
-  padding: 0;
-  margin: 0;
-  border: none;
-  margin-left: 30rpx;
-}
-
-#searchImg {
-  width: 70rpx;
-  height: 70rpx;
+#searchBar {
+  display: block;
 }
 
 #pickView {
-
   display: flex;
 }
 
 .pick {
   padding: 0.3em;
-
+  display: flex;
 }
 
 #listView {
   height: fit-content;
   width: 600rpx;
-  margin-top: 30rpx;
+  margin-top: 150rpx;
 }
 
 .list {

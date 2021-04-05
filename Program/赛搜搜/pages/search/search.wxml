@@ -1,32 +1,27 @@
 <!--index.wxml-->
-<view class="box">
-  <view class="cu-bar search bg-white">
-    <view class="search-form round">
-      <text class="cuIcon-search"></text>
-      <input type="text" placeholder="搜索竞赛" confirm-type="search"></input>
-    </view>
-    <view class="action">
-      <button class="cu-btn bg-green shadow-blur round">搜索</button>
-    </view>
-  </view>
-</view>
+
 <view class="container">
   <!-- 搜索框 -->
+  <view class="cu-bar bg-white search fixed" id="searchBar" style="top:{{CustomBar}}px">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索" confirm-type="search" bindinput="searchIcon"></input>
+    </view>
 
-
-  <!-- 筛选列表 -->
-  <view id="pickView">
-    <picker bindchange="bindPickerChangeSub" value="{{subjectIndex}}"  range="{{subjectArray}}" class="pick">
-      <view>
-        科目: {{subjectArray[subjectIndex]}}
-      </view>
-    </picker>
-    <picker bindchange="bindPickerChangeDate" value="{{dateIndex}}" range="{{dateArray}}" class="pick">
-      <view>
-        日期：{{dateArray[dateIndex]}}
-      </view>
-    </picker>
-  </view>
+    <!-- 筛选栏 -->
+    <view id="pickView">
+      <picker bindchange="bindPickerChangeSub" value="{{subjectIndex}}"  range="{{subjectArray}}" class="pick">
+        <view>
+          科目: {{subjectArray[subjectIndex]}}
+        </view>
+      </picker>
+      <picker bindchange="bindPickerChangeDate" value="{{dateIndex}}" range="{{dateArray}}" class="pick">
+        <view>
+          日期：{{dateArray[dateIndex]}}
+        </view>
+      </picker>
+    </view>
+  </view> 
 
   <!-- 比赛列表 -->
   <view id="listView">
