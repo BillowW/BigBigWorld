@@ -3,6 +3,7 @@
 .container {
   margin: 0;
   padding: 0;
+  background: #fff;
 }
 
 .text{
@@ -13,10 +14,6 @@
   padding: 10rpx;
 }
 
-#mes {
-  display: flex;
-  margin: 15rpx;
-}
 
 #imgView {
   margin-top: 50rpx;

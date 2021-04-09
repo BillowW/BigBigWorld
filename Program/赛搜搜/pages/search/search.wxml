@@ -11,13 +11,18 @@
     <!-- 筛选栏 -->
     <view id="pickView">
       <picker bindchange="bindPickerChangeSub" value="{{subjectIndex}}"  range="{{subjectArray}}" class="pick">
-        <view>
-          科目: {{subjectArray[subjectIndex]}}
+        <view class="solid-bottom text-lg padding">
+          <text class="text-black">科目: {{subjectArray[subjectIndex]}}</text>
         </view>
       </picker>
       <picker bindchange="bindPickerChangeDate" value="{{dateIndex}}" range="{{dateArray}}" class="pick">
-        <view>
-          日期：{{dateArray[dateIndex]}}
+        <view class="solid-bottom text-lg padding">
+          <text class="text-black">日期：{{dateArray[dateIndex]}}</text>
+        </view>
+      </picker>
+      <picker bindchange="bindPickerChangeSub" value="{{subjectIndex}}"  range="{{subjectArray}}" class="pick">
+        <view class="solid-bottom text-lg padding">
+          <text class="text-black">等级: {{subjectArray[subjectIndex]}}</text>
         </view>
       </picker>
     </view>
@@ -25,9 +30,9 @@
 
   <!-- 比赛列表 -->
   <view id="listView">
-    <view wx:for="{{subArray}}">
-      <view wx:if="{{subjectIndex==0 && dateIndex==0}}" class="list">
-        <image src="/images/game.png" class="listImg"></image>
+    <view wx:for="{{subArray}}" class="list">
+      <image src="/images/game.png" class="listImg"></image>
+      <view wx:if="{{subjectIndex==0 && dateIndex==0}}" class="listText">
         <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
       </view>
       <view wx:elif="{{subjectIndex==0 && item.date==dateArray[dateIndex]}}" class="list">

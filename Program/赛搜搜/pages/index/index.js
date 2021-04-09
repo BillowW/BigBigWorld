@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getC();
   },
 
   /**
@@ -62,5 +62,26 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getC: function () {
+    wx.cloud.init({
+      traceUser: true
+    })
+    wx.cloud.callFunction({
+      name: 'getContestsList',
+      complete: res => {
+        console.log(res.result)
+        for(var i = 0;i < 100; i++){
+          wx,wx.showToast({
+            title: res.result.data[i].title,
+            duration: 0,
+            mask: true,
+            success: (res) => {},
+            fail: (res) => {},
+            complete: (res) => {},
+          })
+        }
+      }
+    });
   }
 })

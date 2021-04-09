@@ -3,6 +3,7 @@
 .container {
   margin: 0em;
   padding: 0em;
+  background: #fff;
 }
 
 #searchBar {
@@ -20,8 +21,7 @@
 
 #listView {
   height: fit-content;
-  width: 600rpx;
-  margin-top: 150rpx;
+  margin-top: 200rpx;
 }
 
 .list {
@@ -32,4 +32,8 @@
 .listImg {
   width: 100rpx;
   height: 100rpx;
+}
+
+.listText {
+  padding-top: 28rpx;
 }

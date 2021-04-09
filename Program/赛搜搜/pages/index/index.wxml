@@ -1,10 +1,12 @@
 <!--pages/recommend/recommend.wxml-->
-<view>
-  <text>推荐</text>
+<view class="bg">
+  <text class="solid-bottom text-sl">推荐</text>
 
   <!-- 热门栏 -->
   <view>
-    <text>热门</text>
+    <view>
+      <text class="solid-bottom text-xxl">热门</text>
+    </view>
     <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}"
       indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"
         indicator-color="#8799a3" indicator-active-color="#0081ff">
@@ -39,7 +41,7 @@
 
   <!-- 推荐栏 -->
   <view>
-    <text>推荐</text>
+    <text class="solid-bottom text-xxl">猜你喜欢</text>
     <scroll-view scroll-x="true" class="image-group">
       <image src="/images/bg.jpg"></image>
       <image src="/images/bg.jpg"></image>

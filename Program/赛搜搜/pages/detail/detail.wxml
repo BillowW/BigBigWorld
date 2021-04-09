@@ -3,11 +3,17 @@
 
 <!--pages/detail/detail.wxml-->
 <view class="container">
-  <view class="text">{{subArray[index].name}}</view>
-  <view id="mes">
-    <view class="mesList">科目：{{subArray[index].sub}}</view>
-    <view class="mesList">时间：{{subArray[index].date}}月</view>
+  <!-- 标题 -->
+  <view class="solid-bottom text-xl padding text">
+    <text class="text-black text-bold">{{subArray[index].name}}</text>
   </view>
+
+  <!-- 基本信息 -->
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black mesList">科目：{{subArray[index].sub}}</text>
+    <text class="text-black mesList">科目：{{subArray[index].sub}}</text>
+  </view>
+
   <view id="img" id="imgView">
     <swiper indicator-dots="true">
       <swiper-item>
@@ -23,10 +29,21 @@
   </view>
 
   <view id="detail">
-      <view class="text">简介</view>
-      <view>{{subArray[index].mes}}</view>
-      <view class="text">主办单位</view>
-      <view>{{subArray[index].host}}</view>
+    <view class="solid-bottom text-lg padding text">
+      <text class="text-black">简介</text>
+    </view>
+
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-df padding">{{subArray[index].mes}}</view>
+    </view>
+
+    <view class="solid-bottom text-lg padding text">
+      <text class="text-black">主办单位</text>
+    </view>
+
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-df padding">{{subArray[index].host}}</view>
+    </view>
   </view>
 
 </view>

@@ -1,10 +1,16 @@
 /* pages/recommend/recommend.wxss */
 
+.bg {
+  background: #fff;
+}
+
 .image-group {
   display: flex;
   white-space: nowrap;
   margin-top: 30rpx;
+  margin-bottom: 10rpx;
 }
+
 .image-group image {
   display: inline-block;
   margin-right: 20rpx;
