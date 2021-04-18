@@ -36,4 +36,9 @@
 
 .listText {
   padding-top: 28rpx;
+  display: flex;
+}
+
+.listInText{
+  padding-top: 25rpx;
 }

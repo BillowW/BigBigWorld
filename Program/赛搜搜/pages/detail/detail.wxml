@@ -10,8 +10,9 @@
 
   <!-- 基本信息 -->
   <view class="solid-bottom text-lg padding">
+    <text class="text-black mesList">日期：{{subArray[index].date}} 月</text>
     <text class="text-black mesList">科目：{{subArray[index].sub}}</text>
-    <text class="text-black mesList">科目：{{subArray[index].sub}}</text>
+    <text class="text-black mesList">等级：{{subArray[index].sub}}</text>
   </view>
 
   <view id="img" id="imgView">

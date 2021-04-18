@@ -1,4 +1,4 @@
-// pages/recommend/recommend.js
+// pages/interest/interest.js
 Page({
 
   /**
@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getC();
+
   },
 
   /**
@@ -62,17 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  getC: function () {
-    wx.cloud.init({
-      traceUser: true
-    })
-    wx.cloud.callFunction({
-      name: 'getContestsList',
-      complete: res => {
-        console.log(res.result)
-        // res.result.data[i].title,
-      }
-    });
   }
 })

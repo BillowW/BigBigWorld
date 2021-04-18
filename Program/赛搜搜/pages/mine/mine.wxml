@@ -27,6 +27,12 @@
 
   <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
     <view class="cu-item arrow">
+      <navigator class="content" url="/pages/interest/interest" hover-class="none">
+        <text class="cuIcon-appreciatefill text-red"></text>
+        <text class="text-grey">我的兴趣</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
       <navigator class="content" url="/pages/browRec/browRec" hover-class="none">
         <text class="cuIcon-attentionfill"></text>
         <text class="text-grey">View</text>

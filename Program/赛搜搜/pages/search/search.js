@@ -10,7 +10,25 @@ Page({
     dateArray: ['全部', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
     dateIndex: 0,
 
+    levelArray: ['全部', '校级', '省级', '全国性', '全球性'],
+    levelIndex: 0,
+
     subArray: app.globalData.subArray
+  },
+
+  onLoad: function() {
+    wx.cloud.init({
+      traceUser: true
+    })
+    wx.cloud.callFunction({
+      name: 'getContestsList',
+      complete: res => {
+        console.log(res.result)
+        res.result.forEach(element => {
+          console.log(element)
+        });
+      }
+    });
   },
 
   // 筛选列表的更改函数
