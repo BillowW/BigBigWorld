@@ -9,24 +9,40 @@ Page({
    */
   data: {
     index: 0,
-    indexImg: 0,
-    srcImg1: "",
-    srcImg2: "",
-    srcImg3: "",
-
-    subArray: app.globalData.subArray,
-    // 存储竞赛信息
-    
+    host: "",
+    level: "",
+    title: "",
+    type: [],
+    stars: 0,
+    views: "",
+    mes: "",
+    time: "",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      index: options.index,
-    }),
-    app.globalData.subArray[this.data.index].viewed = 'true'
+    wx.cloud.init({
+      traceUser: true
+    })
+    wx.cloud.callFunction({
+      name: 'getContestById',
+      data: {
+        id: "5b00f9706075241507769e774b32911e",
+      },
+      complete: res => {
+        this.setData({
+          host: res.result.host,
+          level: res.result.level,
+          title: res.result.title,
+          starts: res.result.关注人数,
+          time: res.result.比赛开始时间,
+          views: res.result.浏览量,
+          mes: res.result.竞赛信息,
+        })
+      }
+    })
   },
 
   /**
@@ -40,7 +56,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(app.globalData.subArray[this.data.index].viewed)
+
   },
 
   /**

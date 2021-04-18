@@ -5,14 +5,14 @@
 <view class="container">
   <!-- 标题 -->
   <view class="solid-bottom text-xl padding text">
-    <text class="text-black text-bold">{{subArray[index].name}}</text>
+    <text class="text-black text-bold">{{title}}</text>
   </view>
 
   <!-- 基本信息 -->
   <view class="solid-bottom text-lg padding">
-    <text class="text-black mesList">日期：{{subArray[index].date}} 月</text>
-    <text class="text-black mesList">科目：{{subArray[index].sub}}</text>
-    <text class="text-black mesList">等级：{{subArray[index].sub}}</text>
+    <text class="text-black mesList">日期：{{time}} </text>
+    <text class="text-black mesList">科目：{{type}}</text>
+    <text class="text-black mesList">等级：{{level}}</text>
   </view>
 
   <view id="img" id="imgView">
@@ -35,7 +35,7 @@
     </view>
 
     <view class="flex-sub text-center">
-      <view class="solid-bottom text-df padding">{{subArray[index].mes}}</view>
+      <view class="solid-bottom text-df padding">{{mes}}</view>
     </view>
 
     <view class="solid-bottom text-lg padding text">
@@ -43,7 +43,7 @@
     </view>
 
     <view class="flex-sub text-center">
-      <view class="solid-bottom text-df padding">{{subArray[index].host}}</view>
+      <view class="solid-bottom text-df padding">{{host}}</view>
     </view>
   </view>
 

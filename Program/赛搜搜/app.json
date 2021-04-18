@@ -3,9 +3,9 @@
     "weui": true
   },
   "pages": [
-    "pages/search/search",
+
     "pages/index/index",
-    
+    "pages/search/search",
     "pages/mine/mine",
     "pages/detail/detail",
     "pages/inSearch/inSearch",
