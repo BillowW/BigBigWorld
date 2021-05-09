@@ -4,6 +4,11 @@
   display: flex;
 }
 
+#mes{
+  background: #fff;
+  padding-left: 280rpx; 
+}
+
 #record{
   display: flex;
 }

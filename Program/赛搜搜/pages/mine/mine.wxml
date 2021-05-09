@@ -1,23 +1,23 @@
 <scroll-view scroll-y class="scrollPage">
 
   <!-- 信息 -->
-  <view>
+  <view id="mes">
     <image class="cu-avatar xl round margin-left" src="/images/user.png"></image>
     <view class="solid-bottom text-lg padding">
-        <text class="text-black">UserName</text>
+        <text class="text-black">{{openid}}</text>
     </view>
   </view>
 
     <!-- 浏览量 -->
   <view class="padding flex text-center text-grey bg-white shadow-warp">
     <view class="flex flex-sub flex-direction solid-right">
-      <view class="text-xxl text-orange">123</view>
+      <view class="text-xxl text-orange">{{viewed}}</view>
       <view class="margin-top-sm">
         <text class="cuIcon-attentionfill"></text> View
       </view>
     </view>
     <view class="flex flex-sub flex-direction solid-right">
-      <view class="text-xxl text-blue">456</view>
+      <view class="text-xxl text-blue">{{stars}}</view>
       <view class="margin-top-sm">
         <text class="cuIcon-favorfill"></text> Star</view>
     </view>

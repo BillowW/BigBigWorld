@@ -26,9 +26,9 @@
         </view>
       </picker>
 
-      <picker bindchange="bindPickerChangeSub" value="{{subjectIndex}}"  range="{{subjectArray}}" class="pick">
+      <picker bindchange="bindPickerChangeLevel" value="{{levelIndex}}"  range="{{levelArray}}" class="pick">
         <view class="solid-bottom text-lg padding">
-          <text class="text-black">等级: {{subjectArray[subjectIndex]}}</text>
+          <text class="text-black">等级: {{levelArray[levelIndex]}}</text>
         </view>
       </picker>
     </view>
@@ -36,35 +36,10 @@
 
   <!-- 比赛列表 -->
   <view id="listView">
-
-    <!-- 做一个循环渲染 -->
-    <!-- 在if条件中加入筛选条件 -->
-    <view wx:for="{{subArray}}" class="list">
-
-<!-- 这是最初版本，只有两个选择项 -->
-<!-- 这种情况是两个选项都为全部 -->
-      <view wx:if="{{subjectIndex==0 && dateIndex==0}}" class="listText">
+    <view wx:for="{{dataArray}}" class="list">
+      <view class="listText">
         <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?index={{index}}" class="listInText">{{subArray[index].name}}</navigator>
-      </view>
-
-<!-- 这是其中一个为全部 -->
-<!-- 所以我另一个做了等值条件比较，倘若数据中有数值（比如说比较时间）等于我选择的时间，则会渲染出来 -->
-      <view wx:elif="{{subjectIndex==0 && item.date==dateArray[dateIndex]}}" class="list">
-        <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
-      </view>
-
-<!-- 同上 -->
-      <view wx:elif="{{item.sub==subjectArray[subjectIndex] && dateIndex==0}}" class="list">
-        <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
-      </view>
-
-<!-- 这个是两个都不为全部的 -->
-      <view wx:elif="{{item.sub==subjectArray[subjectIndex] && item.date==dateArray[dateIndex]}}" class="list">
-        <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
+        <navigator url="/pages/detail/detail?id={{dataArray[index]._id}}" class="listInText">{{dataArray[index].title}}</navigator>
       </view>
     </view>
   </view>
