@@ -1,6 +1,10 @@
-// pages/collRec/collRec.js
-
 var app = getApp();
+
+// 初始化数据库
+wx.cloud.init({
+  traceUser: true
+});
+const db = wx.cloud.database();
 
 Page({
 
@@ -8,64 +12,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    subArray: app.globalData.subArray
+    dataArray: [],
+    userId: "",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
+    
+    // 调用云函数
+    wx.cloud.init({
+      traceUser: true
+    });
 
+     // 获取记录字段，供标星/浏览使用
+     const that = this;
+     db.collection('users').where({
+       _openid: app.globalData.openid,
+     }).get({
+       success:  function(res) {
+         // 要注意！这里是一个异步传输!!
+         that.setData({
+           userId: res.data[0]._id,
+         });
+         // 强行同步执行...
+         that.getData()
+       }
+     });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getData: function() {
+    const that = this;
+     //  从数据库把记录获取下来
+     db.collection('users').where({
+      _id: this.data.userId,
+    }).get({
+      success: function(res) {
+        that.setData({
+          dataArray: res.data[0].viewedList
+        });
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    this.setData({
-      subArray: app.globalData.subArray
-  })
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  
 })

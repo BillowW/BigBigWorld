@@ -1,8 +1,12 @@
 <!--pages/collRec/collRec.wxml-->
-<text>pages/collRec/collRec.wxml</text>
-<view wx:for="{{subArray}}">
-  <view wx:if="{{item.viewed == 'true'}}" class="list">
-    <image src="/images/game.png" class="listImg" class="listImg"></image>
-    <navigator url="/pages/detail/detail?index={{index}}">{{item.name}}</navigator>
+<view>
+  <!-- 比赛列表 -->
+  <view id="listView">
+    <view wx:for="{{dataArray}}" class="list">
+      <view class="listText">
+        <image src="/images/game.png" class="listImg"></image>
+        <navigator url="/pages/detail/detail?id={{dataArray[index]._id}}" class="listInText">{{dataArray[index]}}</navigator>
+      </view>
+    </view>
   </view>
 </view>

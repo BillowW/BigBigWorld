@@ -1,1 +1,24 @@
 /* pages/collRec/collRec.wxss */
+#listView {
+  height: fit-content;
+  margin-top: 200rpx;
+}
+
+.list {
+  display: flex;
+  border-bottom: 3rpx solid black;
+}
+
+.listText {
+  padding-top: 28rpx;
+  display: flex;
+}
+
+.listImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.listInText{
+  padding-top: 25rpx;
+}

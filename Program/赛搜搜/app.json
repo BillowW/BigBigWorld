@@ -4,6 +4,7 @@
   },
   "pages": [
     "pages/search/search",
+    
     "pages/index/index",
     
     "pages/mine/mine",
@@ -13,6 +14,7 @@
     "pages/collRec/collRec",
     "pages/about/about",
     "pages/interest/interest"
+    
   ],
   "tabBar": {
     "color": "#a9b7b7",

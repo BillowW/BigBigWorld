@@ -1,2 +1,12 @@
 <!--pages/browRec/browRec.wxml-->
-<text>browRecPage</text>
+<view>
+  <!-- 比赛列表 -->
+  <view id="listView">
+    <view wx:for="{{dataArray}}" class="list">
+      <view class="listText">
+        <image src="/images/game.png" class="listImg"></image>
+        <navigator url="/pages/detail/detail?id={{dataArray[index]._id}}" class="listInText">{{dataArray[index]}}</navigator>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,2 +1,7 @@
 <!--pages/interest/interest.wxml-->
-<text>pages/interest/interest.wxml</text>
+<text>请选择你感兴趣的内容吧！</text>
+
+<!-- 个人兴趣筛选框 -->
+<view wx:for="{{interestList}}">
+  <checkbox>{{item}}</checkbox>
+</view>

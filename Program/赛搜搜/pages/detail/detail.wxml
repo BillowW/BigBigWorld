@@ -16,17 +16,8 @@
   </view>
 
   <view id="img" id="imgView">
-    <swiper indicator-dots="true">
-      <!-- <swiper-item>
-        <image src="{{tools.imgSrc('cloud://main-7g0fysmpc4bc5d12.6d61-main-7g0fysmpc4bc5d12-1305028474/subImg/sub', index, '_1.jpg')}}" class="img"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="{{tools.imgSrc('cloud://main-7g0fysmpc4bc5d12.6d61-main-7g0fysmpc4bc5d12-1305028474/subImg/sub', index, '_2.jpg')}}" class="img"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="{{tools.imgSrc('cloud://main-7g0fysmpc4bc5d12.6d61-main-7g0fysmpc4bc5d12-1305028474/subImg/sub', index, '_3.jpg')}}" class="img"></image>
-      </swiper-item> -->
-    </swiper>
+        <!-- <image src="{{tools.imgSrc('cloud://main-7g0fysmpc4bc5d12.6d61-main-7g0fysmpc4bc5d12-1305028474/subImg/sub', index, '_1.jpg')}}" class="img"></image> -->
+        <!-- <image src="{{tools.imgSrc('cloud://main-7g0fysmpc4bc5d12.6d61-main-7g0fysmpc4bc5d12-1305028474/img/-', imgId, '.png')}}" class="img"></image> -->
   </view>
 
   <view id="detail">
@@ -48,7 +39,7 @@
   </view>
 
   <view>
-    <button bindtap="star()">stars</button>
+    <button bindtap="checkStars">stars</button>
   </view>
 
 </view>

@@ -2,6 +2,12 @@
 
 var  app = getApp();
 
+// 初始化数据库
+wx.cloud.init({
+  traceUser: true
+ });
+ const db = wx.cloud.database();
+
 Page({
 
   /**
@@ -19,6 +25,7 @@ Page({
     views: "",
     mes: "",
     time: "",
+    imgId: "",
 
     // 浏览状态
     viewed: false,
@@ -27,6 +34,8 @@ Page({
     // 用户数据库
     openid: app.globalData.openid,
     dataId: "",
+    viewedList: [],
+    starsList: [],
   },
 
   /**
@@ -58,14 +67,14 @@ Page({
           time: res.result.比赛开始时间,
           views: res.result.浏览量,
           mes: res.result.竞赛信息,
+          imgId: res.result.imageId,
         })
       }
     });
 
     // 获取记录字段，供标星/浏览使用
-    const users = wx.cloud.database().collection('users');
     const that = this;
-    users.where({
+    db.collection('users').where({
       _openid: app.globalData.openid,
     }).get({
       success:  function(res) {
@@ -73,99 +82,102 @@ Page({
         that.setData({
           dataId: res.data[0]._id,
         });
-        // 异步改同步
-        that.init()
+        // 强行同步执行...
+        that.checkViewed()
       }
     });
-
-    
     
   },
-  
-
-  // 同步函数写在里面
-  init:function(){
-    // 根据用户数据库更新页面
-    this.checkViewed()
-  },
 
 
-  // 检查是否已标星,并执行操作
+  // 检查是否已标星并更新数据
   checkStars: function () {
-    wx.cloud.init({
-      traceUser: true
-     });
-     const db = wx.cloud.database().collection('users');
+    var that = this;
 
-    // 1.检查stared
-    if (this.data.stared == 0) {
+    //  检查浏览记录是否存在
+   //  从数据库把记录获取下来
+   db.collection('users').where({
+     _id: this.data.dataId,
+   }).get({
+     success: function(res) {
+       that.setData({
+         starsList: res.data[0].starsList
+       });
+
+       // 更新数据
+       that.updateStars()
+     }
+   });
+  },
+
+  // 更新标星数据
+  updateStars: function() {
+    const _ = db.command;
+
+     // 查看是否存在记录，存在即修改为true
+     if(this.data.starsList.indexOf(this.data.id) != -1) {
+      this.setData({
+        stared:true
+      })
+    };
+
+    //  未标星过则添加标星
+    // !!无法删除
+    if(!this.data.stared) {
       this.setData({
         stared: true,
       });
 
-
-      // 更新用户数据库
-      db.doc(this.data.dataId).update({
+      // 更新用户数据库信息
+      db.collection('users').doc(this.data.dataId).update({
         data: {
-          stars: stars + 1,
-          starsedList: _.push(this.data.id),
+          stars: _.inc(1),
+          starsList: _.push(this.data.id),
         }
-      })
-    } else {
-      this.setData({
-        stared: false,
       });
-
-      db.doc(this.data.dataId).update({
-        data: {
-          stars: stars - 1,
-          starsList: _.pop(),
-        }
-      })
     }
-  },
+    // 数据型数据不便于增删改查！
 
+  },
 
   // 检查是否已浏览
   checkViewed: function () {
     var that = this;
-    // 初始化数据库
-    wx.cloud.init({
-      traceUser: true
-     });
-     const db = wx.cloud.database();
-     
+
      //  检查浏览记录是否存在
+    //  从数据库把记录获取下来
     db.collection('users').where({
-      viewedList: this.data.id,
+      _id: this.data.dataId,
     }).get({
       success: function(res) {
         that.setData({
-          viewed: true,
+          viewedList: res.data[0].viewedList
         });
-        console.log(that.data.viewed)
-        that.updateViewed();
-      }
-    })
-  },
 
+        // 更新数据
+        that.updateViewed()
+      }
+    });
+  },
 
   // 更新浏览信息
   updateViewed: function () {
-    // 初始化数据库
-    wx.cloud.init({
-      traceUser: true
-     });
-     const db = wx.cloud.database();
      const _ = db.command;
 
-     console.log(this.data.viewed)
+     // 查看是否存在记录，存在即修改为true
+     if(this.data.viewedList.indexOf(this.data.id) != -1) {
+      this.setData({
+        viewed:true
+      })
+    };
+
     //  未浏览过
     if(!this.data.viewed) {
       this.setData({
         viewed: true,
       });
 
+      // 更新用户数据库信息
       db.collection('users').doc(this.data.dataId).update({
         data: {
           viewed: _.inc(1),
