@@ -1,3 +1,8 @@
+
+wx.cloud.init({
+  traceUser: true
+})
+
 Page({
   data: {
     // 筛选列表的数据
@@ -19,16 +24,13 @@ Page({
     level: undefined,
 
     id: "",
-    dataArray: []
+    dataArray: [],
+
+    searchDataArray: [],
   },
 
   onLoad: function() {
     this.getData();
-    wx.cloud.init({
-      traceUser: true
-     });
-     const db = wx.cloud.database();
-     console.log(db.collection('contests').get())
   },
   
 
@@ -81,12 +83,9 @@ Page({
       this.setData({
         level: this.data.levelArray[this.data.levelIndex]
       })
-    }
+    };
 
     // 调用云函数
-    wx.cloud.init({
-      traceUser: true
-    })
     wx.cloud.callFunction({
       name: 'getContests',
       data: {
@@ -96,9 +95,52 @@ Page({
       },
       complete: res => {
         this.setData({
-          dataArray: res.result
+          dataArray: res.result,
+          searchDataArray: res.result,
         });
       }
-    })
+    });
   },
+
+  // 设置搜索函数
+  searchInput: function(e) {
+    let that = this;
+    
+
+    if (e.detail.value != "") {
+      this.setData({
+        searchDataArray: [],
+      });
+      this.data.dataArray.forEach(function(item, index) {
+        if (item.title.indexOf(e.detail.value) == -1) {
+          that.data.searchDataArray.push(item);
+        }
+      });
+    } else {
+      console.log(2)
+      this.setData({
+        searchDataArray: this.data.dataArray,
+      });
+    }
+    console.log(this.data.searchDataArray)
+  },
+
+
+  searchwt: function(str1,str2){
+    if(str2.indexOf(str1)>=0)
+      return true
+    else
+      return false
+  },
+  loadwt:function(str,list){
+    var newlist = []
+    for(var i=0;i<length(list);i++){
+      if(this.searchwt(str,list[i])){
+        newlist.push(list[i])
+      }
+      this.setData({
+        dataArray: newlist,
+      });
+    }
+  }
 })

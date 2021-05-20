@@ -8,7 +8,7 @@
 <!-- 搜索框 -->
     <view class="search-form round">
       <text class="cuIcon-search"></text>
-      <input type="text" placeholder="搜索" confirm-type="search" bindinput="searchIcon"></input>
+      <input type="text" placeholder="搜索" confirm-type="search" bindconfirm="searchInput"></input>
     </view>
 
     <!-- 筛选栏 -->
@@ -36,10 +36,10 @@
 
   <!-- 比赛列表 -->
   <view id="listView">
-    <view wx:for="{{dataArray}}" class="list">
+    <view wx:for="{{searchDataArray}}" class="list">
       <view class="listText">
         <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?id={{dataArray[index]._id}}" class="listInText">{{dataArray[index].title}}</navigator>
+        <navigator url="/pages/detail/detail?id={{searchDataArray[index]._id}}" class="listInText">{{searchDataArray[index].title}}</navigator>
       </view>
     </view>
   </view>

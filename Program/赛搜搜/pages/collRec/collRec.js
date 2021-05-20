@@ -50,7 +50,7 @@ Page({
     }).get({
       success: function(res) {
         that.setData({
-          dataArray: res.data[0].viewedList
+          dataArray: res.data[0].starsList
         });
       }
     });

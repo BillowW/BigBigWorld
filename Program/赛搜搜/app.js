@@ -4,6 +4,7 @@ App({
   globalData: {
     openid: null,
     userDataId: "",
+    userLike:[],
   },
 
   onLaunch() {
@@ -26,7 +27,6 @@ App({
       "_openid": this.globalData.openid,
     }).get({
       success: function(res) {
-        console.log(res)
         if (res.data.length == 0) {
           users.add({
             data: {

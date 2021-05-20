@@ -1,5 +1,10 @@
 var app = getApp()
 
+wx.cloud.init({
+  traceUser: true
+});
+const db = wx.cloud.database();
+
 Page({
     data: {
         openid: null,
@@ -8,9 +13,6 @@ Page({
     },
 
     onLoad: function() {
-        wx.cloud.init({
-            traceUser: true
-          });
 
           this.setData({
             openid: app.globalData.openid,
@@ -41,14 +43,24 @@ Page({
           });
 
           // 获取viewed & stars
+          this.getView_star();
     },
 
     // 获取浏览量和标星量
-    getView: function () {
-      wx.cloud.init({
-        traceUser: true
-      });
-      const db = wx.cloud.database().collection('users');
+    getView_star: function () {
+      const that = this;
+
+     db.collection('users').where({
+       _openid: app.globalData.openid,
+     }).get({
+       success:  function(res) {
+         // 要注意！这里是一个异步传输!!
+         that.setData({
+           viewed: res.data[0].viewed,
+           stars: res.data[0].stars,
+         });
+       }
+     });
     }
 
 })

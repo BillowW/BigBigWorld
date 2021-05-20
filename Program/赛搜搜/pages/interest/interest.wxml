@@ -3,5 +3,5 @@
 
 <!-- 个人兴趣筛选框 -->
 <view wx:for="{{interestList}}">
-  <checkbox>{{item}}</checkbox>
+  <button bindtap="bindPickerAddIntere" data-text="{{item}}">{{item}}</button>
 </view>
