@@ -105,42 +105,25 @@ Page({
   // 设置搜索函数
   searchInput: function(e) {
     let that = this;
-    
 
     if (e.detail.value != "") {
       this.setData({
         searchDataArray: [],
       });
-      this.data.dataArray.forEach(function(item, index) {
-        if (item.title.indexOf(e.detail.value) == -1) {
+
+      this.data.dataArray.forEach(item => {
+        if (item.title.indexOf(e.detail.value) != -1) {
           that.data.searchDataArray.push(item);
         }
       });
+      // 更新数据渲染
+      this.setData({
+        searchDataArray: this.data.searchDataArray,
+      });
     } else {
-      console.log(2)
       this.setData({
         searchDataArray: this.data.dataArray,
       });
     }
-    console.log(this.data.searchDataArray)
   },
-
-
-  searchwt: function(str1,str2){
-    if(str2.indexOf(str1)>=0)
-      return true
-    else
-      return false
-  },
-  loadwt:function(str,list){
-    var newlist = []
-    for(var i=0;i<length(list);i++){
-      if(this.searchwt(str,list[i])){
-        newlist.push(list[i])
-      }
-      this.setData({
-        dataArray: newlist,
-      });
-    }
-  }
 })
