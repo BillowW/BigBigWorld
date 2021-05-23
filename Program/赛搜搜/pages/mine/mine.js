@@ -13,7 +13,6 @@ Page({
     },
 
     onLoad: function() {
-
           this.setData({
             openid: app.globalData.openid,
           })
@@ -40,10 +39,12 @@ Page({
                 })
               }
             }
-          });
+          });   
+    },
 
-          // 获取viewed & stars
-          this.getView_star();
+    onShow: function() {
+      // 获取viewed & stars
+      this.getView_star();
     },
 
     // 获取浏览量和标星量
@@ -61,6 +62,10 @@ Page({
          });
        }
      });
+     this.setData({
+       stars: this.data.stars,
+       viewed: this.data.viewed,
+     })
     }
 
 })

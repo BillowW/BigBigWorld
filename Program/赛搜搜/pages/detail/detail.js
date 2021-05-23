@@ -47,11 +47,6 @@ Page({
       id: id.id,
     });   
 
-    // 调用云函数
-    wx.cloud.init({
-      traceUser: true
-    });
-
     // 通过传入的ID获取比赛具体数据
     wx.cloud.callFunction({
       name: 'getContestById',

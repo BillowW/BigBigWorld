@@ -4,7 +4,6 @@ App({
   globalData: {
     openid: null,
     userDataId: "",
-    userLike:[],
   },
 
   onLaunch() {

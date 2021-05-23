@@ -1,4 +1,10 @@
 // pages/recommend/recommend.js
+var app = getApp();
+wx.cloud.init({
+  traceUser: true
+ });
+ const db = wx.cloud.database();
+
 Page({
 
   /**
@@ -6,14 +12,47 @@ Page({
    */
   data: {
     popGames: [],
+    like: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData();
+    this.getUserDb();
+    console.log(this.data.like)
+   
   },
+
+  // 获取用户数据
+  getUserDb: function() {
+    const that = this;
+    db.collection('users').where({
+      _openid: app.globalData.openid,
+    }).get({
+      success:  function(res) {
+        console.log(res)
+        that.setData({
+          like: res.data[0].like,
+        });
+        that.init()
+      }
+    });
+},
+
+init:function () {
+  console.log(this.data.like)
+   // 调用云函数
+   wx.cloud.callFunction({
+    name: 'getBest',
+    data: {
+      type: this.data.like,
+    },
+    complete: res => {
+      console.log(res)
+    }
+  });
+},
 
   // 获取所有数据
   getData: function () {
