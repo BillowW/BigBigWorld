@@ -21,25 +21,32 @@
 }
 
 #listView {
-  height: fit-content;
-  margin-top: 200rpx;
+  margin-top: 160rpx;
 }
 
 .list {
   display: flex;
-  border-bottom: 3rpx solid black;
+  margin-top: 20rpx;
+  flex-shrink: 0;
 }
 
-.listImg {
-  width: 100rpx;
-  height: 100rpx;
+.img {
+  width: 250rpx;
+  height: 250rpx;
+  margin-right: 40rpx;
+  margin-bottom: 30rpx;
+  border-radius:15%;
 }
 
-.listText {
-  padding-top: 28rpx;
-  display: flex;
+.context {
+  overflow-wrap: break-word;
 }
 
-.listInText{
-  padding-top: 25rpx;
+.title {
+  padding: 50rpx;
+}
+
+.title-list {
+  width: 400rpx;
+  padding: 0;
 }

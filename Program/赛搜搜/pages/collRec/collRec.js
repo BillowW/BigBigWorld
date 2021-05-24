@@ -52,6 +52,7 @@ Page({
         that.setData({
           dataArray: res.data[0].starsList
         });
+        console.log(that.data.dataArray)
       }
     });
   },

@@ -1,20 +1,13 @@
-<!-- 引入wxs -->
-<wxs src="../../utils/indexof.wxs" module="tools"></wxs>
-
-<!--pages/search/search.wxml-->
-<view class="container">
-  <!-- 搜索框 -->
-  <view class="searchInput">
-    <input type="text" value="" placeholder="搜索" bindinput="search"/>
-  </view>
-
-  <!-- 搜索结果列表 -->
-  <view>
-    <view wx:for="{{subArray}}">
-      <view wx:if="{{tools.indexOf(item.name, searchValue)}}" class="list">
-        <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?index={{index}}">{{subArray[index].name}}</navigator>
+<view id="recommd">
+  <text class="text-black text-bold text-xxl">猜你喜欢</text>
+  <!-- 比赛项目 -->
+  <view class="list" wx:for="likeGames" style="width: 377rpx; height: 187rpx; display: flex; box-sizing: border-box; left: NaNrpx; top: NaNrpx">
+    <navigator url="/pages/detail/detail?id={{likeGames[index]._id}}" class="list">
+      <image mode="widthFix" src="/images/bg.jpg" class="img" style="border-radius:15%"></image>
+      <view class="context">
+        <view class="text-black text-bold text-xl title title-list" style="word-break:break-all; width:400rpx">712312312389789456456123</view>
+        <view class="text-grey">关注人数:{{likeGames[index].guanzhurenshu}}</view>
       </view>
-    </view>
+    </navigator>
   </view>
 </view>

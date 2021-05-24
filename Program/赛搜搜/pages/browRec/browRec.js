@@ -54,6 +54,7 @@ Page({
         that.setData({
           dataArray: res.data[0].viewedList
         });
+        console.log(that.data.dataArray)
       }
     });
   },

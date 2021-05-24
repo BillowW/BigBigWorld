@@ -1,12 +1,12 @@
 <!--pages/collRec/collRec.wxml-->
-<view>
-  <!-- 比赛列表 -->
-  <view id="listView">
-    <view wx:for="{{dataArray}}" class="list">
-      <view class="listText">
-        <image src="/images/game.png" class="listImg"></image>
-        <navigator url="/pages/detail/detail?id={{dataArray[index]._id}}" class="listInText">{{dataArray[index]}}</navigator>
+<view id="contain">
+  <view class="list" wx:for="dataArray">
+    <navigator url="/pages/detail/detail?id={{dataArray[index]._id}}" class="list">
+      <image mode="widthFix" src="/images/listBg.jpg" class="img"></image>
+      <view class="context">
+        <view class="text-black text-bold text-xl title title-list">{{dataArray[index].title}}</view>
+        <view class="text-grey">关注人数:{{dataArray[index].guanzhurenshu}}</view>
       </view>
-    </view>
+    </navigator>
   </view>
 </view>

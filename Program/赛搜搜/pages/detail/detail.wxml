@@ -2,44 +2,57 @@
 <wxs src="../../utils/src.wxs" module="tools"></wxs>
 
 <!--pages/detail/detail.wxml-->
-<view class="container">
-  <!-- 标题 -->
-  <view class="solid-bottom text-xl padding text">
-    <text class="text-black text-bold">{{title}}</text>
-  </view>
-
-  <!-- 基本信息 -->
-  <view class="solid-bottom text-lg padding">
-    <text class="text-black mesList">日期：{{time}} </text>
-    <text class="text-black mesList">科目：{{type}}</text>
-    <text class="text-black mesList">等级：{{level}}</text>
-  </view>
-
-  <view id="img" id="imgView">
-        <!-- <image src="{{tools.imgSrc('cloud://main-7g0fysmpc4bc5d12.6d61-main-7g0fysmpc4bc5d12-1305028474/subImg/sub', index, '_1.jpg')}}" class="img"></image> -->
-        <!-- <image src="{{tools.imgSrc('cloud://main-7g0fysmpc4bc5d12.6d61-main-7g0fysmpc4bc5d12-1305028474/img/-', imgId, '.png')}}" class="img"></image> -->
-  </view>
-
-  <view id="detail">
-    <view class="solid-bottom text-lg padding text">
-      <text class="text-black">简介</text>
+<view class="contain">
+<!-- 标题 -->
+<view>
+  <view class="text-black text-bold text-xxl">{{title}}</view>
+  <view class="flex flex-sub flex-direction solid-right" bindtap="star">
+  <block wx:if="{{stared==false}}">
+    <view class="starView">
+      <image mode="aspectFit" src="/images/star.png" id="img"></image>
+      <text>关注</text>
     </view>
-
-    <view class="flex-sub text-center">
-      <view class="solid-bottom text-df padding">{{mes}}</view>
+  </block>
+  <block wx:elif="{{stared==true}}">
+    <view class="starView">
+      <image mode="aspectFit" src="/images/star-ed.png" id="img"></image>
+      <text>已关注</text>
     </view>
+  </block>
 
-    <view class="solid-bottom text-lg padding text">
-      <text class="text-black">主办单位</text>
+    <!-- <view class="margin-top-sm">
+      <text class="cuIcon-favorfill"></text> Star</view> -->
+
+  </view>
+</view>
+
+<!-- 简介 -->
+<view>
+  <view class="text-black text-bold text-xl title">简介</view>
+  <view class="detail">{{mes}}</view>
+</view>
+
+<!-- 时间 -->
+<view>
+  <view class="text-black text-bold text-xl title">时间</view>
+  <view class="detail">
+    <view class="context">
+      报名开始时间：{{time1}}
     </view>
-
-    <view class="flex-sub text-center">
-      <view class="solid-bottom text-df padding">{{host}}</view>
+    <view class="context">
+      比赛开始时间：{{time2}}
     </view>
   </view>
+</view>
 
+<!-- 相关信息 -->
   <view>
-    <button bindtap="checkStars">stars</button>
+    <view class="text-black text-bold text-xl title">相关信息</view>
+    <view class="detail">
+      <view class="context">科目：{{type}}</view>
+      <view class="context">等级：{{level}}</view>
+      <view class="context">主办单位：{{host}}</view>
+    </view>
   </view>
 
 </view>

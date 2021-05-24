@@ -24,7 +24,8 @@ Page({
     intereNum: 0,
     views: "",
     mes: "",
-    time: "",
+    time1: "",
+    time2: "",
     imgId: "",
 
     // 浏览状态
@@ -59,10 +60,12 @@ Page({
           level: res.result.level,
           title: res.result.title,
           intereNum: res.result.关注人数,
-          time: res.result.比赛开始时间,
+          time1: res.result.报名开始时间.slice(0, 9),
+          time2: res.result.比赛开始时间.slice(0, 9),
           views: res.result.浏览量,
           mes: res.result.竞赛信息,
           imgId: res.result.imageId,
+          type: res.result.type[0],
         })
       }
     });
@@ -86,7 +89,7 @@ Page({
 
 
   // 检查是否已标星并更新数据
-  checkStars: function () {
+  star: function () {
     var that = this;
 
     //  检查浏览记录是否存在

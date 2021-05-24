@@ -13,15 +13,15 @@ Page({
   data: {
     popGames: [],
     like: [],
+    likeGames: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     this.getUserDb();
-    console.log(this.data.like)
-   
+    this.getData();
   },
 
   // 获取用户数据
@@ -31,7 +31,6 @@ Page({
       _openid: app.globalData.openid,
     }).get({
       success:  function(res) {
-        console.log(res)
         that.setData({
           like: res.data[0].like,
         });
@@ -41,7 +40,6 @@ Page({
 },
 
 init:function () {
-  console.log(this.data.like)
    // 调用云函数
    wx.cloud.callFunction({
     name: 'getBest',
@@ -49,7 +47,9 @@ init:function () {
       type: this.data.like,
     },
     complete: res => {
-      console.log(res)
+      this.setData({
+        likeGames: res.result,
+      })
     }
   });
 },
@@ -91,7 +91,5 @@ init:function () {
         popGames: popGames,
       })
     }
-    console.log(this.data.popGames)
-
   }
 })

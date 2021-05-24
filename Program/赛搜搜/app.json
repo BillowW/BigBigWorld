@@ -21,19 +21,19 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "recommend",
+        "text": "推荐",
         "iconPath": "images/recommend.png",
         "selectedIconPath": "images/recommend-ed.png"
       },
       {
         "pagePath": "pages/search/search",
-        "text": "search",
+        "text": "搜搜",
         "iconPath": "images/search.png",
         "selectedIconPath": "images/search-ed.png"
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "mine",
+        "text": "我的",
         "iconPath": "images/mine.png",
         "selectedIconPath": "images/mine-ed.png"
       }

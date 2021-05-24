@@ -2,9 +2,9 @@
 
   <!-- 信息 -->
   <view id="mes">
-    <image class="cu-avatar xl round margin-left" src="/images/user.png"></image>
+    <image class="cu-avatar xl round margin-left" src="/images/icon.jpg"></image>
     <view class="solid-bottom text-lg padding">
-        <text class="text-black">{{openid}}</text>
+        <text class="text-black">赛搜搜</text>
     </view>
   </view>
 

@@ -1,6 +1,6 @@
 /* pages/recommend/recommend.wxss */
 
-.bg {
+Page {
   background: #fff;
 }
 
@@ -14,4 +14,52 @@
 .image-group image {
   display: inline-block;
   margin-right: 20rpx;
+}
+
+.list {
+  display: flex;
+  margin-top: 20rpx;
+  flex-shrink: 0;
+}
+
+#recommd {
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+}
+
+.img {
+  width: 250rpx;
+  height: 250rpx;
+  margin-right: 40rpx;
+  margin-bottom: 30rpx;
+  border-radius:15%;
+}
+
+.title {
+  padding: 50rpx;
+}
+
+.title-list {
+  width: 400rpx;
+  padding: 0;
+}
+
+
+.recommd {
+  position: relative;
+}
+
+.context {
+  overflow-wrap: break-word;
+}
+
+
+.child {
+  position: absolute;
+  left: 0;
+  top: 100rpx;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
 }

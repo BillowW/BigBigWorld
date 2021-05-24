@@ -1,20 +1,57 @@
-/* pages/search/search.wxss */
+/* pages/recommend/recommend.wxss */
 
-.container{
-  padding: 0%;
-  margin: 0%;
+Page {
+  background: #fff;
 }
 
-.searchInput{
-  border: 5rpx black solid;
+.image-group {
+  display: flex;
+  white-space: nowrap;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.image-group image {
+  display: inline-block;
+  margin-right: 20rpx;
 }
 
 .list {
   display: flex;
-  border-bottom: 3rpx solid black;
+  margin-top: 20rpx;
+  flex-shrink: 0;
 }
 
-.listImg {
-  width: 100rpx;
-  height: 100rpx;
+#recommd {
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+}
+
+.img {
+  width: 250rpx;
+  height: 250rpx;
+  margin-right: 40rpx;
+  margin-bottom: 30rpx;
+}
+
+.title {
+  padding: 50rpx;
+}
+
+.title-list {
+  padding: 0;
+}
+
+.recommd {
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  left: 0;
+  top: 100rpx;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
 }

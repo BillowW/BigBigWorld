@@ -1,26 +1,34 @@
 /* pages/detail/detail.wxss */
 
-.container {
-  margin: 0;
-  padding: 0;
+Page {
   background: #fff;
 }
 
-.text{
-  text-align: center;
+.contain {
+  margin: 0;
+  padding: 0;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 50rpx;
 }
 
-.mesList{
-  padding: 10rpx;
+.starView {
+  display: flex;
 }
 
-
-#imgView {
-  margin-top: 50rpx;
-  width: 600rpx;
+#img {
+  width: 30rpx;
+  height: 50rpx;
 }
 
-#detail {
-  margin-top: 50rpx;
-  width: 650rpx;
+.title {
+  margin-top: 20rpx;
+}
+
+.detail {
+  margin-top: 10rpx;
+}
+
+.context {
+  padding: 5rpx;
 }

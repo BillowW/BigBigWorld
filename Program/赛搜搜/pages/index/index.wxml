@@ -1,54 +1,41 @@
 <!--pages/recommend/recommend.wxml-->
 <view class="bg">
-  <text class="solid-bottom text-sl">推荐</text>
 
-  <!-- 热门栏 -->
-  <view>
-    <view>
-      <text class="solid-bottom text-xxl">热门</text>
+<!-- 热门栏 -->
+<view>
+  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}"
+    indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"
+      indicator-color="#8799a3" indicator-active-color="#0081ff">
+
+    <view wx:for="{{popGames}}">
+     <navigator url="/pages/detail/detail?id={{popGames[index][0]}}">
+      <swiper-item class="{{cardCur==index?'cur':''}}">
+        <view class="recommd">
+          <image src="/images/gameBg.jpg"  mode="aspectFill" ></image>
+          <text class="child text-black text-bold text-xl title">{{popGames[index][2]}}</text>
+        </view>
+        <video src="/images/gameBg.jpg" autoplay loop muted show-play-btn="{{false}}"
+          controls="{{false}}" objectFit="cover"></video>
+      </swiper-item>
+     </navigator>
     </view>
-    <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}"
-      indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500"
-        indicator-color="#8799a3" indicator-active-color="#0081ff">
-      <swiper-item class="{{cardCur==index?'cur':''}}">
-        <image src="/images/bg.jpg"  mode="aspectFill" ></image>
-        <video src="/images/bg.jpg" autoplay loop muted show-play-btn="{{false}}"
-          controls="{{false}}" objectFit="cover"></video>
-      </swiper-item>
-      <swiper-item class="{{cardCur==index?'cur':''}}">
-        <image src="/images/bg.jpg"  mode="aspectFill" ></image>
-        <video src="/images/bg.jpg" autoplay loop muted show-play-btn="{{false}}"
-          controls="{{false}}" objectFit="cover"></video>
-      </swiper-item>
-      <swiper-item class="{{cardCur==index?'cur':''}}">
-        <image src="/images/bg.jpg"  mode="aspectFill" ></image>
-        <video src="/images/bg.jpg" autoplay loop muted show-play-btn="{{false}}"
-          controls="{{false}}" objectFit="cover"></video>
-      </swiper-item>
-      <swiper-item class="{{cardCur==index?'cur':''}}">
-        <image src="/images/bg.jpg"  mode="aspectFill" ></image>
-        <video src="/images/bg.jpg" autoplay loop muted show-play-btn="{{false}}"
-          controls="{{false}}" objectFit="cover"></video>
-      </swiper-item>
-      <swiper-item class="{{cardCur==index?'cur':''}}">
-        <image src="/images/bg.jpg"  mode="aspectFill" ></image>
-        <video src="/images/bg.jpg" autoplay loop muted show-play-btn="{{false}}"
-          controls="{{false}}" objectFit="cover"></video>
-      </swiper-item>
-    </swiper>
-    
-  </view>
-
-  <!-- 推荐栏 -->
-  <view>
-    <text class="solid-bottom text-xxl">猜你喜欢</text>
-    <scroll-view scroll-x="true" class="image-group">
-      <image src="/images/bg.jpg"></image>
-      <image src="/images/bg.jpg"></image>
-      <image src="/images/bg.jpg"></image>
-      <image src="/images/bg.jpg"></image>
-      <image src="/images/bg.jpg"></image>
-    </scroll-view>
-  </view>
+  </swiper>
   
+</view>
+
+<!-- 推荐栏 -->
+<view id="recommd">
+  <text class="text-black text-bold text-xxl">猜你喜欢</text>
+  <!-- 比赛项目 -->
+  <view class="list" wx:for="likeGames">
+    <navigator url="/pages/detail/detail?id={{likeGames[index]._id}}" class="list">
+      <image mode="widthFix" src="/images/listBg.jpg" class="img"></image>
+      <view class="context">
+        <view class="text-black text-bold text-xl title title-list">{{likeGames[index].title}}</view>
+        <view class="text-grey">关注人数:{{likeGames[index].guanzhurenshu}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>
+
 </view>
