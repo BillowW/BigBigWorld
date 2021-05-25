@@ -15,31 +15,7 @@ Page({
     onLoad: function() {
           this.setData({
             openid: app.globalData.openid,
-          })
-          
-          // 获取用户信息
-          var that = this;
-          wx.getSetting({
-            withSubscriptions: true,
-            success(res) {
-              if(res.authSetting['scope.userInfo']) {
-                wx.getUserInfo({
-                  success: function(res) {
-                    console.log(res.userInfo)
-                    that.setData({
-                      result: 'ok',
-                      nickName: res.userInfo.nickName,
-                      avatarUrl: res.userInfo.avatarUrl,
-                    })
-                  }
-                })
-              } else {
-                that.setData({
-                  result: 'null',
-                })
-              }
-            }
-          });   
+          }) 
     },
 
     onShow: function() {
